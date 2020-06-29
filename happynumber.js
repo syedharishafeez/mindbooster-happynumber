@@ -26,7 +26,6 @@ while (firstTime || (parseInt(comingNumber) !== 1 && checkArray)) {
   } else {
     arrayNumber.push(comingNumber);
   }
-  console.log("arrayNumber = ", arrayNumber);
 }
 
 if (parseInt(comingNumber) === 1) {
