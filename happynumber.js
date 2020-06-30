@@ -1,31 +1,25 @@
 let number = 29;
 
-let stringNumber = "" + number;
+let comingNumber = number;
 
-let comingNumber;
-
-let arrayNumber = [stringNumber];
-
-let firstTime = true;
+let arrayNumber = [number];
 
 let checkArray = true;
 
-while (firstTime || (parseInt(comingNumber) !== 1 && checkArray)) {
+while (parseInt(comingNumber) !== 1 && checkArray) {
   let maintainNumber = 0;
-  if (firstTime) {
-    comingNumber = stringNumber;
-    firstTime = false;
+  let divideNumber = comingNumber;
+  while (divideNumber / 10 !== 0) {
+    maintainNumber = maintainNumber + (divideNumber % 10) ** 2;
+    divideNumber = parseInt(divideNumber / 10);
   }
-  for (let i = 0; i < comingNumber.length; i++) {
-    maintainNumber += parseInt(comingNumber[i]) ** 2;
-    // console.log("maintainNumber = ", maintainNumber);
-  }
-  comingNumber = "" + maintainNumber;
+  comingNumber = maintainNumber;
   if (arrayNumber.includes(comingNumber)) {
     checkArray = false;
   } else {
     arrayNumber.push(comingNumber);
   }
+  console.log(arrayNumber);
 }
 
 if (parseInt(comingNumber) === 1) {
